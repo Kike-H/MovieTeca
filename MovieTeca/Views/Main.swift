@@ -21,7 +21,7 @@ struct Main: View {
                     Carousel(width: 240, height: 350, padding: 12)
                     Spacer()
                     SeccionTitle(title: "Popular Movies")
-                    Carousel(width: 140, height: 250, padding: 12)
+                    Carousel(width: 160, height: 250, padding: 8)
                 } //VStack
             } //Scroll View
             
