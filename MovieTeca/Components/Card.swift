@@ -34,6 +34,7 @@ struct Card: View {
                         .overlay(
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .indigo))
+                                .scaleEffect(2)
                         )
                 }
             }
