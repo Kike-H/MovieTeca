@@ -16,7 +16,7 @@ struct Carousel: View {
                     Card(width: width, height: height, padding: padding, color: color)
                 }
             } //Hstack
-        }
+        } //Scroll View
     }
 }
 
