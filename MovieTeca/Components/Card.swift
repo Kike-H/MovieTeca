@@ -41,7 +41,6 @@ struct Card: View {
             .frame(width: CGFloat(width), height: CGFloat(height))
             .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
             .padding(.horizontal, CGFloat(padding))
-            Text("Title movie")
         } // VStack
     }
 }

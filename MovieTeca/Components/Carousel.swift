@@ -13,7 +13,10 @@ struct Carousel: View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(colors, id: \.self) { color in
-                    Card(width: width, height: height, padding: padding, color: color)
+                    VStack {
+                        Card(width: width, height: height, padding: padding, color: color)
+                        Text("Title movie")
+                    }
                 }
             } //Hstack
         } //Scroll View
