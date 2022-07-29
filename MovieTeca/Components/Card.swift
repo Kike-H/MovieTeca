@@ -12,36 +12,38 @@ struct Card: View {
     let width: Int; let height: Int; let padding: Int; let color: Color
     let cornerRadius = CGFloat(20)
     var body: some View {
-        VStack {
-            AsyncImage(url: URL(string: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")) { phase in
-                if let image = phase.image {
-                    image
-                        .resizable()
-                }
-                else if phase.error != nil {
-                    Image("no-img")
-                        .resizable()
-                        .frame(width: CGFloat(width), height: CGFloat(height))
-                        .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-                        .padding(.horizontal, CGFloat(padding))
-                }
-                else {
-                    RoundedRectangle(cornerRadius: cornerRadius)
-                        .frame(width: CGFloat(width-12), height: CGFloat(height-12))
-                        .foregroundColor(.indigo)
-                        .opacity(0.2)
-                        .padding(.horizontal, CGFloat(padding))
-                        .overlay(
-                            ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: .indigo))
-                                .scaleEffect(2)
-                        )
-                }
-            }
-            .frame(width: CGFloat(width), height: CGFloat(height))
-            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-            .padding(.horizontal, CGFloat(padding))
-        } // VStack
+        NavigationLink(destination: DetailsView()) {
+            VStack {
+                AsyncImage(url: URL(string: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")) { phase in
+                    if let image = phase.image {
+                        image
+                            .resizable()
+                    }
+                    else if phase.error != nil {
+                        Image("no-img")
+                            .resizable()
+                            .frame(width: CGFloat(width), height: CGFloat(height))
+                            .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                            .padding(.horizontal, CGFloat(padding))
+                    }
+                    else {
+                        RoundedRectangle(cornerRadius: cornerRadius)
+                            .frame(width: CGFloat(width-12), height: CGFloat(height-12))
+                            .foregroundColor(.indigo)
+                            .opacity(0.2)
+                            .padding(.horizontal, CGFloat(padding))
+                            .overlay(
+                                ProgressView()
+                                    .progressViewStyle(CircularProgressViewStyle(tint: .indigo))
+                                    .scaleEffect(2)
+                            )
+                    } // Last else
+                } // Image
+                .frame(width: CGFloat(width), height: CGFloat(height))
+                .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                .padding(.horizontal, CGFloat(padding))
+            } // VStack
+        } // Navigation Link
     }
 }
 

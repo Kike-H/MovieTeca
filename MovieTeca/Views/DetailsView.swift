@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Details: View {
+struct DetailsView: View {
     let starts: [Int] = [1,2,3,4,5]
     var body: some View {
         NavigationView {
@@ -20,8 +20,7 @@ struct Details: View {
                             Text("Movie Title")
                                 .font(.title)
                             Text("Movie title 2")
-                                .font(.title3)
-                                .padding(.vertical, 1)
+                                .font(.title2)
                             HStack {
                                 ForEach(starts, id: \.self) { start in
                                     Image(systemName: "star.fill")
@@ -37,13 +36,14 @@ struct Details: View {
                     Carousel(width: 130, height: 170, padding: 12)
                 } //Vstack
             } // Scroll view
-            .navigationTitle(Text("Information"))
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle(Text("Movie Title"))
         }// Navigation View
     }
 }
 
 struct Details_Previews: PreviewProvider {
     static var previews: some View {
-        Details()
+        DetailsView()
     }
 }
