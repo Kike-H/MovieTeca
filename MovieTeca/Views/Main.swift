@@ -18,15 +18,15 @@ struct Main: View {
             ScrollView {
                 VStack {
                     SeccionTitle(title: "New Movies", width: 150)
-                    Carousel(width: 240, height: 350, padding: 12)
+                    Carousel(width: 240, height: 350, padding: 12, navigation: true)
                     Spacer()
                     SeccionTitle(title: "Popular Movies", width: 180)
-                    Carousel(width: 160, height: 250, padding: 8)
+                    Carousel(width: 160, height: 250, padding: 8, navigation: true)
                 } //VStack
             } //Scroll View
             
             //Navigation Tittle
-            .navigationTitle(Text("MovieTeca v0.2"))
+            .navigationTitle(Text("MovieTeca v0.3"))
             
             // ToolBar Button
             .toolbar {

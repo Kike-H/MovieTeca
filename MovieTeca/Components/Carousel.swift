@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct Carousel: View {
-    let width: Int; let height: Int; let padding: Int
+    let width: Int; let height: Int; let padding: Int; let navigation: Bool;
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(colors, id: \.self) { color in
                     VStack {
-                        Card(width: width, height: height, padding: padding, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")
+                        Card(width: width, height: height, padding: padding, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", navigation: navigation)
                         Text("Title movie")
                     }
                 }
@@ -25,6 +25,6 @@ struct Carousel: View {
 
 struct Carousel_Previews: PreviewProvider {
     static var previews: some View {
-        Carousel(width: 240, height: 350, padding: 12)
+        Carousel(width: 240, height: 350, padding: 12, navigation: false)
     }
 }

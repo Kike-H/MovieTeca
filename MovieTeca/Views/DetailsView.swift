@@ -11,35 +11,34 @@ import SwiftUI
 struct DetailsView: View {
     let starts: [Int] = [1,2,3,4,5]
     var body: some View {
-        NavigationView {
-            ScrollView {
-                VStack{
-                    HStack {
-                        Card(width: 140, height: 200, padding: 12, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")
-                        VStack {
-                            Text("Movie Title")
-                                .font(.title)
-                            Text("Movie title 2")
-                                .font(.title2)
-                            HStack {
-                                ForEach(starts, id: \.self) { start in
-                                    Image(systemName: "star.fill")
-                                        .foregroundColor(.indigo)
-                                }
+        ScrollView{
+            VStack {
+                HStack {
+                    Card(width: 140, height: 200, padding: 12, url: "", navigation: false)
+                    VStack {
+                        Text("Movie Tittle")
+                            .font(.title)
+                        Text("Secondary title")
+                            .font(.title2)
+                        HStack {
+                            ForEach(starts, id: \.self) { star in
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.indigo)
                             }
-                        }
-                        Spacer()
-                    }
-                    SeccionTitle(title: "Synopsis", width: 120)
-                    Text("lorem ipsum")
-                    SeccionTitle(title: "Actors", width: 100)
-                    Carousel(width: 130, height: 170, padding: 12)
+                        } // HStack
+                    } //Vstack
                     Spacer()
-                } //Vstack
-            Spacer()
-            } // Scroll view
-            .navigationTitle(Text("Movie Title"))
-        }// Navigation View
+                } //HStack
+                SeccionTitle(title: "Synopsis", width: 123)
+                VStack {
+                    Text("lorem ipsum bla bla bla bla bla bla bla bla bla bla bla bla bla bla")
+                }
+                .multilineTextAlignment(.leading)
+                SeccionTitle(title: "Actors", width: 100)
+                Carousel(width: 130, height: 170, padding: 12, navigation: false)
+            } //Vstack
+        } // ScrollView
+        .navigationTitle(Text("Movie Title"))
     }
 }
 
