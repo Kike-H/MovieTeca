@@ -34,12 +34,13 @@ struct DetailsView: View {
                         }
                         Spacer()
                     }
-                    SeccionTitle(title: "Synopsis", width: 130)
+                    SeccionTitle(title: "Synopsis", width: 120)
                     Text("lorem ipsum")
-                    SeccionTitle(title: "Actors", width: 120)
+                    SeccionTitle(title: "Actors", width: 100)
                     Carousel(width: 130, height: 170, padding: 12)
                     Spacer()
                 } //Vstack
+            Spacer()
             } // Scroll view
             .navigationTitle(Text("Movie Title"))
         }// Navigation View

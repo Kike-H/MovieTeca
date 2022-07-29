@@ -16,7 +16,7 @@ struct SeccionTitle: View {
                 .frame(width: CGFloat(width))
                 .foregroundColor(.white)
                 .background(.indigo)
-                .cornerRadius(5)
+                .clipShape(RoundedRectangle(cornerRadius: 5))
                 .padding()
             Spacer()
         }
