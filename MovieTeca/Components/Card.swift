@@ -9,7 +9,12 @@ import SwiftUI
 
 
 struct Card: View {
-    let width: Int; let height: Int; let padding: Int; let url: String; let navigation: Bool;
+    
+    //Atributes
+    let width, height, padding: Int
+    let url: String
+    let navigation: Bool
+    
     var body: some View {
         if navigation {
             NavigationLink(destination: DetailsView()) {
@@ -23,8 +28,14 @@ struct Card: View {
 }
 
 struct CardTemplate: View {
-    let width: Int; let height: Int; let padding: Int; let url: String;
+
+    //Atributes
+    let width, height, padding: Int
+    let url: String
+    
+    //Const
     let cornerRadius = CGFloat(20)
+    
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: url)) { phase in

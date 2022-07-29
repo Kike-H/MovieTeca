@@ -10,7 +10,7 @@ struct NowPlaying: Codable {
     let dates: Dates
     let page: Int
     let results: [Movie]
-    let totalPages, totalResults: Int
+    let totalPages, totalResults: Int?
 
     enum CodingKeys: String, CodingKey {
         case dates, page, results

@@ -10,16 +10,16 @@ import Foundation
 // MARK: - Movie
 struct Movie: Codable, Identifiable{
     let adult: Bool
-    let backdropPath: String
-    let genreIDS: [Int]
+    let backdropPath: String?
+    let genreIDS: [Int]?
     let id: Int
-    let originalLanguage: String
-    let originalTitle, overview: String
+    let originalLanguage: String?
+    let originalTitle, overview: String?
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath, releaseDate, title: String?
     let video: Bool
-    let voteAverage: Double
-    let voteCount: Int
+    let voteAverage: Double?
+    let voteCount: Int?
 
     enum CodingKeys: String, CodingKey {
         case adult
