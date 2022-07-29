@@ -27,6 +27,7 @@ struct Main: View {
             
             //Navigation Tittle
             .navigationTitle(Text("MovieTeca v0.3"))
+            
             // ToolBar Button
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
