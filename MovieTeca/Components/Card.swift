@@ -9,12 +9,12 @@ import SwiftUI
 
 
 struct Card: View {
-    let width: Int; let height: Int; let padding: Int; let color: Color
+    let width: Int; let height: Int; let padding: Int; let url: String
     let cornerRadius = CGFloat(20)
     var body: some View {
         NavigationLink(destination: DetailsView()) {
             VStack {
-                AsyncImage(url: URL(string: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")) { phase in
+                AsyncImage(url: URL(string: url)) { phase in
                     if let image = phase.image {
                         image
                             .resizable()
@@ -49,6 +49,6 @@ struct Card: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(width: 240, height: 350, padding: 15, color: .indigo).previewLayout(.fixed(width: 260, height: 390))
+        Card(width: 240, height: 350, padding: 15, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg").previewLayout(.fixed(width: 260, height: 390))
     }
 }

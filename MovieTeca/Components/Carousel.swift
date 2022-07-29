@@ -14,7 +14,7 @@ struct Carousel: View {
             HStack {
                 ForEach(colors, id: \.self) { color in
                     VStack {
-                        Card(width: width, height: height, padding: padding, color: color)
+                        Card(width: width, height: height, padding: padding, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")
                         Text("Title movie")
                     }
                 }

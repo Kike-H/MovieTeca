@@ -9,17 +9,13 @@ import SwiftUI
 
 
 struct DetailsView: View {
-    init() {
-        let aparence = UINavigationBarAppearance()
-        aparence.backgroundImage = UIImage(named: "no-img")
-    }
     let starts: [Int] = [1,2,3,4,5]
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack{
                     HStack {
-                        Card(width: 140, height: 200, padding: 12, color: .indigo)
+                        Card(width: 140, height: 200, padding: 12, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg")
                         VStack {
                             Text("Movie Title")
                                 .font(.title)
