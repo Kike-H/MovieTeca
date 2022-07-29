@@ -12,10 +12,10 @@ struct Carousel: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack {
-                ForEach(colors, id: \.self) { color in
+                ForEach(movies) { movie in
                     VStack {
-                        Card(width: width, height: height, padding: padding, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", navigation: navigation)
-                        Text("Title movie")
+                        Card(width: width, height: height, padding: padding, url: movie.posterPath, navigation: navigation)
+                        Text(movie.title)
                     }
                 }
             } //Hstack

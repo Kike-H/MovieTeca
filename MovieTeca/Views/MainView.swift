@@ -7,12 +7,9 @@
 
 import SwiftUI
 
-let colors:[Color] = [.red, .indigo, .green, .orange, .blue]
-let num = colors.count
-// 240 350
-// 140 250
+let movies:[Movie] = [Movie(adult: false, backdropPath: "", genreIDS: [1,2,3], id: 1, originalLanguage: "en", originalTitle: "The Batman", overview: "", popularity: 2.5, posterPath: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", releaseDate: "", title: "The Batman", video: false, voteAverage: 2.6, voteCount: 2)]
 
-struct Main: View {
+struct MainView: View {
     var body: some View {
         NavigationView {
             ScrollView {
@@ -46,6 +43,6 @@ struct Main: View {
 
 struct Main_Previews: PreviewProvider {
     static var previews: some View {
-        Main()
+        MainView()
     }
 }
