@@ -9,6 +9,10 @@ import SwiftUI
 
 
 struct DetailsView: View {
+    init() {
+        let aparence = UINavigationBarAppearance()
+        aparence.backgroundImage = UIImage(named: "no-img")
+    }
     let starts: [Int] = [1,2,3,4,5]
     var body: some View {
         NavigationView {
@@ -30,13 +34,13 @@ struct DetailsView: View {
                         }
                         Spacer()
                     }
-                    SeccionTitle(title: "Synopsis")
+                    SeccionTitle(title: "Synopsis", width: 130)
                     Text("lorem ipsum")
-                    SeccionTitle(title: "Actors")
+                    SeccionTitle(title: "Actors", width: 120)
                     Carousel(width: 130, height: 170, padding: 12)
+                    Spacer()
                 } //Vstack
             } // Scroll view
-            .navigationBarTitleDisplayMode(.large)
             .navigationTitle(Text("Movie Title"))
         }// Navigation View
     }

@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct SeccionTitle: View {
-    let title: String
+    let title: String; let width: Int;
     var body: some View {
         HStack {
             Text(title)
-                .font(.system(size: 20))
-                .frame(width: 160)
+                .font(.system(size: 20, weight: .bold))
+                .frame(width: CGFloat(width))
                 .foregroundColor(.white)
                 .background(.indigo)
                 .cornerRadius(5)
@@ -25,6 +25,6 @@ struct SeccionTitle: View {
 
 struct SeccionTittle_Previews: PreviewProvider {
     static var previews: some View {
-        SeccionTitle(title: "New Movies").previewLayout(.fixed(width: 165, height: 25))
+        SeccionTitle(title: "New Movies", width: 160).previewLayout(.fixed(width: 165, height: 25))
     }
 }
