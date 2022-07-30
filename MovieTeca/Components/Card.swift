@@ -3,30 +3,36 @@
 //  MovieTeca
 //
 //  Created by Kike Hernandez D. on 26/07/22.
-// https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg
+//
 
 import SwiftUI
 
-
+// MARK: - CardView
 struct Card: View {
     
     //Atributes
     let width, height, padding: Int
-    let url: String
     let navigation: Bool
+    let movie: Movie?
     
+// MARK: - Crad With Navigation
     var body: some View {
         if navigation {
-            NavigationLink(destination: DetailsView()) {
-                CardTemplate(width: width, height: height, padding: padding, url: url)
+            NavigationLink(destination: DetailsView(movie: movie!)) {
+                CardTemplate(width: width, height: height, padding: padding, url: movie?.posterPath ?? "")
             } // Navigation Link
-        } // if
+        }
+// MARK: - Crad With Navigation
+        
+// MARK: - Crad WithOuth Navigation
         else {
-            CardTemplate(width: width, height: height, padding: padding, url: url)
-        } // else
+            CardTemplate(width: width, height: height, padding: padding, url: movie?.posterPath ?? "")
+        }
+// MARK: - Crad WithOuth Navigation
     }
 }
 
+// MARK: - CardTemplate
 struct CardTemplate: View {
 
     //Atributes
@@ -72,6 +78,6 @@ struct CardTemplate: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(width: 240, height: 350, padding: 15, url: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", navigation: false).previewLayout(.fixed(width: 260, height: 390))
+        Card(width: 240, height: 350, padding: 15, navigation: false, movie: nil).previewLayout(.fixed(width: 260, height: 390))
     }
 }

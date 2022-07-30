@@ -9,41 +9,65 @@ import SwiftUI
 
 
 struct DetailsView: View {
-    let starts: [Int] = [1,2,3,4,5]
+    //Atributes
+    let movie: Movie
     var body: some View {
         ScrollView{
             VStack {
                 HStack {
-                    Card(width: 140, height: 200, padding: 12, url: "", navigation: false)
+// MARK: - CardMovie
+                    Card(width: 140, height: 200, padding: 12, navigation: false, movie: movie)
+// MARK: - CardMovie
+                    
+// MARK: - Movie Information
+                    
+// MARK: - Movie Titles
                     VStack {
-                        Text("Movie Tittle")
+                        Text(movie.title ?? "")
                             .font(.title)
-                        Text("Secondary title")
+                        Text(movie.originalTitle ?? "No secondary title")
                             .font(.title2)
+                        
+// MARK: - Movie Titles
+                        
+// MARK: - Vote Stars
                         HStack {
-                            ForEach(starts, id: \.self) { star in
-                                Image(systemName: "star.fill")
-                                    .foregroundColor(.indigo)
+                            if(movie.voteCount != nil) {
+                                ForEach(1..<6) { star in
+                                    if(star <= movie.voteCount!) {
+                                        Image(systemName: "star.fill")
+                                            .foregroundColor(.indigo)
+                                    }
+                                    else {
+                                        Image(systemName: "star")
+                                            .foregroundColor(.indigo)
+                                    }
+                                }
+                            }
+                            else {
+                                Text("No vote information")
                             }
                         } // HStack
+// MARK: - Vote Stars
                     } //Vstack
+// MARK: - Movie Information
                     Spacer()
                 } //HStack
                 SeccionTitle(title: "Synopsis", width: 123)
                 VStack {
-                    Text("lorem ipsum bla bla bla bla bla bla bla bla bla bla bla bla bla bla")
+                    Text(movie.overview ?? "No overview information")
                 }
                 .multilineTextAlignment(.leading)
-                SeccionTitle(title: "Actors", width: 100)
-                Carousel(width: 130, height: 170, padding: 12, navigation: false)
+                SeccionTitle(title: "Cast", width: 100)
+//                Carousel(width: 130, height: 170, padding: 12, navigation: false)
             } //Vstack
         } // ScrollView
-        .navigationTitle(Text("Movie Title"))
+        .navigationTitle(Text(movie.title ?? "No title"))
     }
 }
 
 struct Details_Previews: PreviewProvider {
     static var previews: some View {
-        DetailsView()
+        DetailsView(movie: Movie(adult: true, backdropPath: nil, genreIDS: nil, id: 1, originalLanguage: nil, originalTitle: nil, overview: nil, popularity: 2, posterPath: nil, releaseDate: nil, title: "The batman", video: false, voteAverage: 2, voteCount: 1))
     }
 }
