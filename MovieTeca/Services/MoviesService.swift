@@ -21,13 +21,14 @@ class MovieStore: MovieService {
     
     @Environment(\.myAPIKEY) var APIKEY
     private let baseAPIURL = "https://api.themoviedb.org/3"
+    private let movieLenguaje = "&language=en-US"
     
     private init() {}
     
     
     // MARK: - Implementation of protocol
     func fetchNowPlaying(pag: Int, complettion: @escaping (Result<NowPlaying, Error>) -> ()) {
-        AF.request(baseAPIURL + "/movie/now_playing?api_key=" + APIKEY + "&language=en-US&page=\(pag)")
+        AF.request(baseAPIURL + "/movie/now_playing?api_key=" + APIKEY + movieLenguaje + "&page=\(pag)")
             .responseDecodable(of: NowPlaying.self) { response in
                 guard let movies = response.value else {
                     if let error = response.error {
@@ -39,7 +40,7 @@ class MovieStore: MovieService {
             }
     }
     func fetchPopular(pag: Int, complettion: @escaping (Result<NowPlaying, Error>) -> ()) {
-        AF.request(baseAPIURL + "/movie/popular?api_key=" + APIKEY + "&language=en-US&page=\(pag)")
+        AF.request(baseAPIURL + "/movie/popular?api_key=" + APIKEY + movieLenguaje + "&page=\(pag)")
             .responseDecodable(of: NowPlaying.self) { response in
                 guard let movies = response.value else {
                     if let error = response.error {
