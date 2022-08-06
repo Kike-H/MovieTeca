@@ -7,20 +7,16 @@ import Foundation
 
 // MARK: - Welcome
 struct NowPlaying: Codable {
-    let dates: Dates
-    let page: Int
+    let page: Int?
     let results: [Movie]
-    let totalPages, totalResults: Int?
+    let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
-        case dates, page, results
+        case page
+        case results = "results"
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
 }
 
-// MARK: - Dates
-struct Dates: Codable {
-    let maximum, minimum: String
-}
 

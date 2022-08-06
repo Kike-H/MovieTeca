@@ -6,19 +6,22 @@
 //
 
 import SwiftUI
+import Alamofire
+
 
 
 struct MainView: View {
-    let movies:[Movie] = [Movie(adult: false, backdropPath: "", genreIDS: [1,2,3], id: 1, originalLanguage: "en", originalTitle: "", overview: "", popularity: 2.5, posterPath: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", releaseDate: "", title: "Batman V Superman", video: false, voteAverage: 2.6, voteCount: 2), Movie(adult: false, backdropPath: "", genreIDS: [1,2,3], id: 1, originalLanguage: "en", originalTitle: "The Batman", overview: "", popularity: 2.5, posterPath: "https://cdn.mos.cms.futurecdn.net/p7LYq5FN4SAHk7sYp6zZog.jpg", releaseDate: "", title: "The Batman", video: false, voteAverage: 2.6, voteCount: 4)]
+    @StateObject var moviesDelegate = MoviesDelegate()
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack {
                     SeccionTitle(title: "New Movies", width: 150)
-                    Carousel(width: 240, height: 350, padding: 12, navigation: true, movies: movies)
+                    Carousel(width: 240, height: 350, padding: 12, navigation: true, movies: moviesDelegate.now_playing)
                     Spacer()
                     SeccionTitle(title: "Popular Movies", width: 180)
-                    Carousel(width: 160, height: 250, padding: 8, navigation: true, movies: movies)
+                    Carousel(width: 160, height: 250, padding: 8, navigation: true, movies: moviesDelegate.popular)
                 } //VStack
             } //Scroll View
             

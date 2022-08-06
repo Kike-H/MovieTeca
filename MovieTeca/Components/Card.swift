@@ -19,7 +19,8 @@ struct Card: View {
     var body: some View {
         if navigation {
             NavigationLink(destination: DetailsView(movie: movie!)) {
-                CardTemplate(width: width, height: height, padding: padding, url: movie?.posterPath ?? "")
+                let posterPath = movie?.posterPath ?? ""
+                CardTemplate(width: width, height: height, padding: padding, url: "https://image.tmdb.org/t/p/w500\(posterPath)")
             } // Navigation Link
         }
 // MARK: - Crad With Navigation
