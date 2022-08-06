@@ -34,7 +34,7 @@ struct DetailsView: View {
                         
 // MARK: - Vote Stars
                         HStack {
-                            if(movie.voteCount != nil) {
+                            if(movie.voteAverage != nil) {
                                 ForEach(1..<6) { star in
                                     let avg = Int(movie.voteAverage!/2)
                                     if(star <= avg) {
