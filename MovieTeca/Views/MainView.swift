@@ -11,6 +11,7 @@ import Alamofire
 
 
 struct MainView: View {
+    @State private var showingAlert = false
     @StateObject var moviesDelegate = MoviesDelegate()
     
     var body: some View {
@@ -32,9 +33,13 @@ struct MainView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
+                        showingAlert = true
                         print("Hello")
                     } label: {
                         Label("Search", systemImage: "magnifyingglass")
+                    }
+                    .alert("Comming soon", isPresented: $showingAlert) {
+                        Button("OK", role: .cancel) {}
                     }
                 } // Group
             } //ToolBar
