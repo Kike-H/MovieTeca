@@ -19,7 +19,7 @@ class MovieStore: MovieService {
     // MARK: - Singleton
     static let shared = MovieStore()
     
-    private let APIKEY = "API_KEY"
+    @Environment(\.myAPIKEY) var APIKEY
     private let baseAPIURL = "https://api.themoviedb.org/3"
     
     private init() {}
