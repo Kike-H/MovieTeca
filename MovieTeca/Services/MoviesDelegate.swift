@@ -37,4 +37,10 @@ class MoviesDelegate : ObservableObject {
             }
         }
     }
+    func reload () {
+        self.now_playing.removeAll()
+        self.popular.removeAll()
+        getMoviesNowPlaying()
+        getMoviesPopular()
+    }
 }

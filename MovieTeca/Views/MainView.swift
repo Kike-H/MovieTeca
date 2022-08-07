@@ -43,10 +43,17 @@ struct MainView: View {
                     .alert("Comming soon", isPresented: $showingAlert) {
                         Button("OK", role: .cancel) {}
                     }
+                    // MARK: - Reload Button
+                    Button {
+                        moviesDelegate.reload()
+                    } label: {
+                        Label("", systemImage: "arrow.clockwise")
+                    }
                     // MARK: - Configuration Button
                     NavigationLink(destination: ConfigurationView().environmentObject(ColorSchemeManager())) {
                         Label("", systemImage: "gearshape")
                     }
+                    // MARK: - Configuration Button
                 } // Group
             } //ToolBar
         }// Navigation View

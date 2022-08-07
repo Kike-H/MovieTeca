@@ -65,14 +65,14 @@ struct DetailsView: View {
                 }
                 .multilineTextAlignment(.leading)
                 SeccionTitle(title: "Cast", width: 100)
-                    .onAppear {
-                        castDelegate.getCastMovie(id: movie.id)
-                    }
                 Carousel(width: 130, height: 170, padding: 12, navigation: false, movies: nil, cast: castDelegate.casting)
              
             } //Vstack
         } // ScrollView
         .navigationTitle(Text(movie.title ?? "No title"))
+        .onAppear {
+            castDelegate.getCastMovie(id: movie.id)
+        }
     }
 }
 
