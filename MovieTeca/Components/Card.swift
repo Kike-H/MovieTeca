@@ -14,20 +14,21 @@ struct Card: View {
     let width, height, padding: Int
     let navigation: Bool
     let movie: Movie?
+    let cast: Cast?
     
 // MARK: - Crad With Navigation
     var body: some View {
+        let imgPath = movie?.posterPath ?? cast?.profilePath ?? ""
         if navigation {
             NavigationLink(destination: DetailsView(movie: movie!)) {
-                let posterPath = movie?.posterPath ?? ""
-                CardTemplate(width: width, height: height, padding: padding, url: "https://image.tmdb.org/t/p/w500\(posterPath)")
+                CardTemplate(width: width, height: height, padding: padding, url: "https://image.tmdb.org/t/p/w500\(imgPath)")
             } // Navigation Link
         }
 // MARK: - Crad With Navigation
         
 // MARK: - Crad WithOuth Navigation
         else {
-            CardTemplate(width: width, height: height, padding: padding, url: movie?.posterPath ?? "")
+            CardTemplate(width: width, height: height, padding: padding, url: "https://image.tmdb.org/t/p/w500\(imgPath)")
         }
 // MARK: - Crad WithOuth Navigation
     }
@@ -79,6 +80,6 @@ struct CardTemplate: View {
 
 struct Card_Previews: PreviewProvider {
     static var previews: some View {
-        Card(width: 240, height: 350, padding: 15, navigation: false, movie: nil).previewLayout(.fixed(width: 260, height: 390))
+        Card(width: 240, height: 350, padding: 15, navigation: false, movie: nil, cast: nil).previewLayout(.fixed(width: 260, height: 390))
     }
 }

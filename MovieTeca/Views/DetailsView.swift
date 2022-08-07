@@ -11,12 +11,14 @@ import SwiftUI
 struct DetailsView: View {
     //Atributes
     let movie: Movie
+    @StateObject var castDelegate = CastDelegate()
+    
     var body: some View {
         ScrollView{
             VStack {
                 HStack {
 // MARK: - CardMovie
-                    Card(width: 140, height: 200, padding: 12, navigation: false, movie: movie)
+                    Card(width: 140, height: 200, padding: 12, navigation: false, movie: movie, cast: nil)
 // MARK: - CardMovie
                     
 // MARK: - Movie Information
@@ -63,7 +65,11 @@ struct DetailsView: View {
                 }
                 .multilineTextAlignment(.leading)
                 SeccionTitle(title: "Cast", width: 100)
-//                Carousel(width: 130, height: 170, padding: 12, navigation: false)
+                    .onAppear {
+                        castDelegate.getCastMovie(id: movie.id)
+                    }
+                Carousel(width: 130, height: 170, padding: 12, navigation: false, movies: nil, cast: castDelegate.casting)
+             
             } //Vstack
         } // ScrollView
         .navigationTitle(Text(movie.title ?? "No title"))

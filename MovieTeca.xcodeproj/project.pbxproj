@@ -14,6 +14,9 @@
 		8A6A7142289EFFF60083E684 /* MoviesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A7141289EFFF60083E684 /* MoviesService.swift */; };
 		8A6A7144289F07570083E684 /* MoviesDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A7143289F07570083E684 /* MoviesDelegate.swift */; };
 		8A6A714E289F30600083E684 /* EnvironmentV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A714D289F30600083E684 /* EnvironmentV.swift */; };
+		8A6A7150289F3A090083E684 /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A714F289F3A090083E684 /* Cast.swift */; };
+		8A6A7154289F3AC70083E684 /* CastService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A7153289F3AC70083E684 /* CastService.swift */; };
+		8A6A7156289F3ED90083E684 /* CastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6A7155289F3ED90083E684 /* CastDelegate.swift */; };
 		8A7F4D462893613A0018557E /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F4D452893613A0018557E /* DetailsView.swift */; };
 		8A7F4D4F289475250018557E /* NowPlaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F4D4E289475250018557E /* NowPlaying.swift */; };
 		8A7F4D51289477350018557E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7F4D50289477350018557E /* Movie.swift */; };
@@ -33,6 +36,9 @@
 		8A6A7141289EFFF60083E684 /* MoviesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesService.swift; sourceTree = "<group>"; };
 		8A6A7143289F07570083E684 /* MoviesDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesDelegate.swift; sourceTree = "<group>"; };
 		8A6A714D289F30600083E684 /* EnvironmentV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentV.swift; sourceTree = "<group>"; };
+		8A6A714F289F3A090083E684 /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
+		8A6A7153289F3AC70083E684 /* CastService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastService.swift; sourceTree = "<group>"; };
+		8A6A7155289F3ED90083E684 /* CastDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastDelegate.swift; sourceTree = "<group>"; };
 		8A7F4D452893613A0018557E /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8A7F4D4E289475250018557E /* NowPlaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlaying.swift; sourceTree = "<group>"; };
 		8A7F4D50289477350018557E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 			children = (
 				8A6A7141289EFFF60083E684 /* MoviesService.swift */,
 				8A6A7143289F07570083E684 /* MoviesDelegate.swift */,
+				8A6A7153289F3AC70083E684 /* CastService.swift */,
+				8A6A7155289F3ED90083E684 /* CastDelegate.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 			children = (
 				8A7F4D4E289475250018557E /* NowPlaying.swift */,
 				8A7F4D50289477350018557E /* Movie.swift */,
+				8A6A714F289F3A090083E684 /* Cast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,6 +280,7 @@
 				8A7F4D53289479210018557E /* MainView.swift in Sources */,
 				8A7F4D51289477350018557E /* Movie.swift in Sources */,
 				8A39250B2890EE4800D532BD /* SeccionTitle.swift in Sources */,
+				8A6A7150289F3A090083E684 /* Cast.swift in Sources */,
 				8A7F4D4F289475250018557E /* NowPlaying.swift in Sources */,
 				8AE126A0288E28230039927E /* ContentView.swift in Sources */,
 				8A6A7142289EFFF60083E684 /* MoviesService.swift in Sources */,
@@ -278,6 +288,8 @@
 				8A6A714E289F30600083E684 /* EnvironmentV.swift in Sources */,
 				8A6A7144289F07570083E684 /* MoviesDelegate.swift in Sources */,
 				8AE1269E288E28230039927E /* MovieTecaApp.swift in Sources */,
+				8A6A7154289F3AC70083E684 /* CastService.swift in Sources */,
+				8A6A7156289F3ED90083E684 /* CastDelegate.swift in Sources */,
 				8A3925032890DB6200D532BD /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
