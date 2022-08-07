@@ -8,8 +8,6 @@
 import SwiftUI
 import Alamofire
 
-
-
 struct MainView: View {
     @State private var showingAlert = false
     @StateObject var moviesDelegate = MoviesDelegate()
