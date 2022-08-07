@@ -18,20 +18,23 @@ struct MainView: View {
         NavigationView {
             ScrollView {
                 VStack {
+                    // MARK: - New Movies
                     SeccionTitle(title: "New Movies", width: 150)
                     Carousel(width: 240, height: 350, padding: 12, navigation: true, movies: moviesDelegate.now_playing, cast: nil)
                     Spacer()
+                    // MARK: - Popular Movies
                     SeccionTitle(title: "Popular Movies", width: 180)
                     Carousel(width: 160, height: 250, padding: 8, navigation: true, movies: moviesDelegate.popular, cast: nil)
                 } //VStack
             } //Scroll View
             
-            //Navigation Tittle
+            // MARK: - Navigation Tittle
             .navigationTitle(Text("MovieTeca"))
             
-            // ToolBar Button
+            // MARK: - ToolBar
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    // MARK: - Searching Button
                     Button {
                         showingAlert = true
                     } label: {
@@ -39,6 +42,10 @@ struct MainView: View {
                     }
                     .alert("Comming soon", isPresented: $showingAlert) {
                         Button("OK", role: .cancel) {}
+                    }
+                    // MARK: - Configuration Button
+                    NavigationLink(destination: ConfigurationView().environmentObject(ColorSchemeManager())) {
+                        Label("", systemImage: "gearshape")
                     }
                 } // Group
             } //ToolBar

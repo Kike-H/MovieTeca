@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MovieTecaApp: App {
+    @StateObject var csManager = ColorSchemeManager()
     var body: some Scene {
         WindowGroup {
             MainView()
+                .onAppear {
+                    csManager.applyColorScheme()
+                }
         }
     }
 }
