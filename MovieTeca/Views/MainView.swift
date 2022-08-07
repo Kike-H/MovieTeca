@@ -34,7 +34,6 @@ struct MainView: View {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button {
                         showingAlert = true
-                        print("Hello")
                     } label: {
                         Label("Search", systemImage: "magnifyingglass")
                     }
