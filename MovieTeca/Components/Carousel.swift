@@ -19,7 +19,7 @@ struct Carousel: View {
         // MARK: - Movie
         ScrollView(.horizontal){
             HStack {
-                
+                // MARK: - Movies
                 if let moviesList = movies {
                     ForEach(moviesList, id: \.self) { movie in
                         VStack {
@@ -31,6 +31,7 @@ struct Carousel: View {
                     }
                 }
                 
+                // MARK: - Cast
                 if let castList = cast {
                     ForEach(castList, id: \.self) { castObj in
                         VStack {
