@@ -12,23 +12,21 @@ struct SearchView: View {
     @StateObject var searchDelegate = SearchDelegate()
     
     var body: some View {
-        NavigationView {
-            List (searchDelegate.moviesSearching) { movie in
-                CellView(movie: movie)
-            }
-            .searchable(
-                text: $movieName,
-                placement: .navigationBarDrawer(displayMode: .always),
-                prompt: "Search a movie"
-            )
-            .onChange(of: movieName) { value in
-                searchDelegate.moviesSearching.removeAll()
-                if(!value.isEmpty) {
-                    searchDelegate.searchMovie(nameMovie: value)
-                }
-            }
-            .navigationTitle("Search Movies")
+        List (searchDelegate.moviesSearching) { movie in
+            CellView(movie: movie)
         }
+        .searchable(
+            text: $movieName,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Search a movie"
+        )
+        .onChange(of: movieName) { value in
+            searchDelegate.moviesSearching.removeAll()
+            if(!value.isEmpty) {
+                searchDelegate.searchMovie(nameMovie: value)
+            }
+        }
+        .navigationTitle("Searching movie\(movieName)")
     }
 }
 
