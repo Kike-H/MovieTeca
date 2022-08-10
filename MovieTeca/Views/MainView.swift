@@ -33,13 +33,8 @@ struct MainView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     // MARK: - Searching Button
-                    Button {
-                        showingAlert = true
-                    } label: {
-                        Label("Search", systemImage: "magnifyingglass")
-                    }
-                    .alert("Comming soon", isPresented: $showingAlert) {
-                        Button("OK", role: .cancel) {}
+                    NavigationLink(destination: SearchView()) {
+                        Label("", systemImage: "magnifyingglass")
                     }
                     // MARK: - Reload Button
                     Button {
